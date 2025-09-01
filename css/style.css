@@ -312,7 +312,7 @@ p strong {
 
 .container-texto-destaque {
     color: var(--cor-super-destaque);
-    max-width: 600px;
+    /* max-width: 600px; */
     margin: 0 auto 2rem;
     text-align: center;
     font-size: 1.5rem;
