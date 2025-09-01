@@ -322,18 +322,18 @@ p strong {
 
 .imagem-container {
     /* Opcional: para definir o tamanho do círculo e centralizar */
-    width: 200px;
-    height: 200px;
+    width: 60%;
+    height: 60%;
     overflow: hidden;
     /* Para garantir que a imagem fique contida no círculo */
     border-radius: 50%;
     /* Cria a forma do círculo, para um elemento quadrado */
-    border: 5px solid var(--cor-super-destaque);
+    border: 5px solid var(--cor-destaque);
 }
 
 .imagem-circular {
-    width: 40%;
-    height: 40%;
+    /* width: 40%;
+    height: 40%; */
     object-fit: cover;
     /* Garante que a imagem preencha a área circular sem distorção */
 }
