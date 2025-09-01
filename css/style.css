@@ -9,6 +9,7 @@
     --cor-btn-whatsapp-hover: #25c73b;
     --cor-fundo-marrom: #b55a3c;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -22,17 +23,24 @@ body {
 }
 
 header {
-      position: fixed;       /* fixa no topo */
-      top: 0;
-      left: 0;
-      width: 100%;           /* ocupa 100% da largura */
-      background-color: var(--cor-fundo-marrom);
-      color: var(--cor-secundaria);
-      text-align: center;    /* centraliza o texto */
-      font-size: 1rem;     /* tamanho razoável */
-      font-family: Arial, Helvetica, sans-serif; /* sem serifa */
-      padding: 1rem 1rem;       /* espaçamento interno */
-      z-index: 1000;         /* fica acima de outros elementos */
+    position: fixed;
+    /* fixa no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* ocupa 100% da largura */
+    background-color: var(--cor-fundo-marrom);
+    color: var(--cor-secundaria);
+    text-align: center;
+    /* centraliza o texto */
+    font-size: 1rem;
+    /* tamanho razoável */
+    font-family: Arial, Helvetica, sans-serif;
+    /* sem serifa */
+    padding: 1rem 1rem;
+    /* espaçamento interno */
+    z-index: 1000;
+    /* fica acima de outros elementos */
 }
 
 .logo {
@@ -100,31 +108,43 @@ section p {
 }
 
 .btn-whatsapp {
-  display: inline-flex;             /* alinhamento do texto + ícone */
-  align-items: center;              /* centraliza verticalmente */
-  justify-content: center;          /* centraliza horizontalmente */
-  gap: 8px;                         /* espaço entre ícone e texto */
+    display: inline-flex;
+    /* alinhamento do texto + ícone */
+    align-items: center;
+    /* centraliza verticalmente */
+    justify-content: center;
+    /* centraliza horizontalmente */
+    gap: 8px;
+    /* espaço entre ícone e texto */
 
-  background-color: #25d366;        /* verde WhatsApp */
-  color: #fff;                      /* texto branco */
-  font-weight: bold;
-  text-decoration: none;            /* remove sublinhado */
-  padding: 1rem 1rem;               /* espaço interno */
-  border-radius: 10px;              /* deixa arredondado */
-  transition: background 0.3s ease; /* efeito suave */
+    background-color: #25d366;
+    /* verde WhatsApp */
+    color: #fff;
+    /* texto branco */
+    font-weight: bold;
+    text-decoration: none;
+    /* remove sublinhado */
+    padding: 1rem 1rem;
+    /* espaço interno */
+    border-radius: 10px;
+    /* deixa arredondado */
+    transition: background 0.3s ease;
+    /* efeito suave */
 }
 
 .btn-whatsapp::after {
-  /* content: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg'); */
-  content: url('../imagens/whatsapp.svg');
-  width: 30%;
-  height: 30%;
-  display: inline-block;
-  filter: invert(1); /* deixa o ícone branco */
+    /* content: url('https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg'); */
+    content: url('../imagens/whatsapp.svg');
+    width: 30%;
+    height: 30%;
+    display: inline-block;
+    filter: invert(1);
+    /* deixa o ícone branco */
 }
 
 .btn-whatsapp:hover {
-  background-color: #1ebe5d; /* tom mais escuro no hover */
+    background-color: #1ebe5d;
+    /* tom mais escuro no hover */
 }
 
 .letras-miudas {
@@ -262,9 +282,11 @@ ul li {
     font-size: 1rem;
     margin: 1rem 0;
 }
+
 p {
     color: var(--cor-texto)
 }
+
 p strong {
     color: var(--cor-super-destaque)
 }
@@ -299,18 +321,21 @@ p strong {
 }
 
 .imagem-container {
-  /* Opcional: para definir o tamanho do círculo e centralizar */
-  width: 200px;
-  height: 200px;
-  overflow: hidden; /* Para garantir que a imagem fique contida no círculo */
-  border-radius: 50%; /* Cria a forma do círculo, para um elemento quadrado */
-  border: 5px solid var(--cor-super-destaque); 
+    /* Opcional: para definir o tamanho do círculo e centralizar */
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    /* Para garantir que a imagem fique contida no círculo */
+    border-radius: 50%;
+    /* Cria a forma do círculo, para um elemento quadrado */
+    border: 5px solid var(--cor-super-destaque);
 }
 
 .imagem-circular {
-  width: 40%;
-  height: 40%;
-  object-fit: cover; /* Garante que a imagem preencha a área circular sem distorção */
+    width: 40%;
+    height: 40%;
+    object-fit: cover;
+    /* Garante que a imagem preencha a área circular sem distorção */
 }
 
 .btn-flat {
@@ -321,8 +346,18 @@ p strong {
     font-size: 1rem;
     border-radius: 10px;
     cursor: pointer;
-    text-decoration: none; 
+    text-decoration: none;
     transition: background-color 0.3s ease;
+    display: inline-block;
+    /* garante comportamento de botão */
+    white-space: normal;
+    /* permite quebra de linha */
+    word-wrap: break-word;
+    /* quebra palavras muito grandes */
+    text-align: center;
+    /* centraliza o texto quebrado */
+    max-width: 250px;
+    /* define limite pro botão (opcional) */
 }
 
 .faixa-texto-100pc-final {
@@ -338,9 +373,11 @@ p strong {
     /* color: var(--cor-destaque); */
     font-weight: bold;
 }
+
 .txt-verde-musgo {
     color: #5d6c40;
 }
+
 .txt-laranja {
     color: #df7857;
 }
