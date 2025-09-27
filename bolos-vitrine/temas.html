@@ -12,6 +12,15 @@
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        :root {
+            --primary: #831843;
+            --muted: #9d174d;
+            --accent: #e11d48;
+            --accent-dark: #be123c;
+            --bg: #fff1f2;
+            --card: #ffe4e6;
+        }
+
         .theme-pink {
             --primary: #111827;
             --muted: #6b7280;
@@ -96,29 +105,12 @@
             if (r) r.checked = true;
         });
     </script>
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '324230336566459');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=324230336566459&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
 </head>
 
-<body class="theme-rose leading-relaxed">
+<body class="antialiased leading-relaxed">
 
     <!-- SELETOR DE TEMA -->
-    <div class="hidden w-full py-3 px-4 bg-white/70 sticky top-0 z-40 backdrop-blur-sm border-b">
+    <div class="w-full py-3 px-4 bg-white/70 sticky top-0 z-40 backdrop-blur-sm border-b">
         <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
             <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-start">
                 <img src="https://rendadoce.blog/img/logo.png" alt="Renda Doce" class="h-9 w-auto object-contain"
