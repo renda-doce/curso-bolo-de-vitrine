@@ -80,22 +80,7 @@
             background-color: var(--card);
         }
     </style>
-    <script>
-        function setTheme(theme) {
-            document.body.classList.remove(
-                "theme-blue", "theme-pink", "theme-dark", "theme-green",
-                "theme-gold", "theme-lilac", "theme-red", "theme-rose"
-            );
-            document.body.classList.add(theme);
-            localStorage.setItem('rendaDoceTheme', theme);
-        }
-        window.addEventListener('DOMContentLoaded', () => {
-            const saved = localStorage.getItem('rendaDoceTheme') || 'theme-blue';
-            setTheme(saved);
-            const r = document.querySelector('input[name="theme"][value="' + saved + '"]');
-            if (r) r.checked = true;
-        });
-    </script>
+    
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
