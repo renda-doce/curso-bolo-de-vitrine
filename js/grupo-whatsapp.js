@@ -1,5 +1,5 @@
 // Define o link do grupo
-  const linkGrupo = "https://chat.whatsapp.com/G29Zcu1L3RhDXh5Dm1CMgc";
+  const linkGrupo = "https://chat.whatsapp.com/DacWFeD7lBC29IpWz9lPsf";
 
   // Seleciona todos os elementos com a classe
   const botoes = document.querySelectorAll(".link-grupo");
