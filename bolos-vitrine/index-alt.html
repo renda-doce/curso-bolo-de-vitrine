@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Aprenda a criar Bolos de Vitrine que vendem até 3x mais | Renda Doce</title>
+    <meta name="description"
+        content="Em 3 aulas gratuitas, você vai aprender a transformar ingredientes simples em bolos profissionais que vendem todos os dias." />
+    <meta name="keywords" content="curso de bolos, bolo de vitrine, confeitaria, curso online, vender bolos" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: #FFF6EB;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
+
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 20px, 0);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .btn-cta {
+            background-color: #00C853;
+            color: #fff;
+            font-weight: 700;
+            padding: 1.25rem 2rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 4px 14px rgba(0, 200, 83, 0.4);
+            text-decoration: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-cta:hover {
+            background-color: #00A344;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 200, 83, 0.5);
+        }
+
+        .btn-cta:active {
+            transform: translateY(0);
+        }
+
+        .urgency-text {
+            color: #00C853;
+            font-weight: 700;
+        }
+
+        .check-icon {
+            color: #00C853;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .countdown {
+            background: linear-gradient(135deg, #00C853 0%, #00962A 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            box-shadow: 0 10px 30px rgba(0, 200, 83, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .countdown-timer-box {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .timer-block {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            min-width: 80px;
+            backdrop-filter: blur(5px);
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 800;
+            display: block;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        .testimonial-box {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            margin: 1rem 0;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .section-heading {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        @media (min-width: 640px) {
+            .section-heading {
+                font-size: 2.25rem;
+            }
+        }
+
+        .objection-box {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid #00C853;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+        }
+
+        .arrow-icon {
+            color: #00C853;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Melhorias em detalhes visuais */
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s;
+        }
+
+        .benefit-item:hover {
+            transform: translateX(5px);
+        }
+
+        details>summary {
+            list-style: none;
+        }
+
+        details>summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '324230336566459');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=324230336566459&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+
+<body class="leading-relaxed antialiased">
+
+    <!-- HERO SECTION -->
+    <main class="pt-10 pb-16">
+        <section class="max-w-4xl mx-auto px-4 animate-fade-in">
+            <!-- Headline Principal -->
+            <h1 class="text-3xl sm:text-5xl font-extrabold mb-6 leading-tight text-center text-gray-900">
+                Aprenda a criar <span class="urgency-text">Bolos de Vitrine</span> que vendem até <span
+                    class="urgency-text">3x mais</span> — feitos na sua cozinha, com o que você já tem
+            </h1>
+
+            <!-- Subheadline -->
+            <h2 class="text-lg sm:text-xl mb-8 text-center text-gray-700 max-w-2xl mx-auto leading-relaxed">
+                Em <strong>3 aulas gratuitas</strong>, você vai aprender a transformar ingredientes simples em
+                <strong>bolos profissionais</strong> que vendem todos os dias.
+            </h2>
+
+            <!-- Imagens dos bolos -->
+            <div class="grid grid-cols-3 gap-3 sm:gap-4 mb-8">
+                <img src='./img/1.png' alt="Bolo de Vitrine 1"
+                    class="rounded-xl object-cover w-full h-32 sm:h-48 shadow-md transform hover:scale-105 transition duration-300" />
+                <img src="./img/bolo5.webp" alt="Bolo de Vitrine 2"
+                    class="rounded-xl object-cover w-full h-32 sm:h-48 shadow-md transform hover:scale-105 transition duration-300" />
+                <img src="./img/3.jpeg" alt="Bolo de Vitrine 3"
+                    class="rounded-xl object-cover w-full h-32 sm:h-48 shadow-md transform hover:scale-105 transition duration-300" />
+            </div>
+
+            <!-- CTA Principal -->
+            <div class="text-center mb-5">
+                <a href="#" class="link-grupo btn-cta text-lg sm:text-xl w-full sm:w-auto">
+                    <span>👉 Quero entrar no grupo VIP gratuito</span>
+                </a>
+            </div>
+
+            <!-- Aviso abaixo do botão -->
+            <p class="text-center text-sm text-gray-600 mb-10 flex items-center justify-center gap-2">
+                <span class="material-symbols-rounded text-red-500 text-lg">block</span>
+                <span>O link será enviado <strong>somente no grupo do Whatsapp</strong></span>
+            </p>
+        </section>
+
+        <!-- PROVA SOCIAL IMEDIATA -->
+        <section class="max-w-4xl mx-auto px-4 mb-14 animate-fade-in delay-100">
+            <div class="testimonial-box text-center relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-2 bg-green-500"></div>
+                <div class="flex items-center justify-center gap-1 text-yellow-500 mb-3">
+                    <span class="material-symbols-rounded">star</span>
+                    <span class="material-symbols-rounded">star</span>
+                    <span class="material-symbols-rounded">star</span>
+                    <span class="material-symbols-rounded">star</span>
+                    <span class="material-symbols-rounded">star</span>
+                </div>
+                <p class="text-green-700 font-bold mb-4 uppercase tracking-wide text-sm">⭐ Mais de mil alunas formadas
+                </p>
+                <p class="italic text-gray-800 text-xl sm:text-2xl font-serif leading-relaxed mb-4">
+                    "Eu vendia bolo por R$50. Depois das aulas, vendi por R$180."
+                </p>
+                <cite class="inline-block mt-2 text-sm font-semibold text-gray-500 not-italic">— Isabela Martins,
+                    confeiteira e aluna</cite>
+            </div>
+        </section>
+
+        <!-- URGÊNCIA REAL -->
+        <section class="max-w-4xl mx-auto px-4 mb-14 animate-fade-in delay-200">
+            <!-- URGÊNCIA REAL - VAGAS -->
+            <div class="countdown">
+                <div class="flex flex-col items-center">
+                    <span class="material-symbols-rounded text-4xl mb-2">group_add</span>
+                    <p class="text-base sm:text-lg mb-2">⏳ As vagas para o grupo VIP são limitadas.</p>
+                    <p class="text-sm sm:text-base opacity-90">Garanta sua participação antes que lote.</p>
+                </div>
+
+                <div class="mt-4 flex flex-col items-center">
+                    <div class="bg-white/20 backdrop-blur-sm rounded-lg p-4 mb-2 text-center min-w-[150px]">
+                        <span class="text-5xl font-extrabold block leading-none mb-1" id="vagas-restantes">--</span>
+                        <span class="text-xs uppercase tracking-wider opacity-90 font-semibold">Vagas Restantes</span>
+                    </div>
+                    <div class="w-full max-w-xs bg-black/20 rounded-full h-3 mt-2 overflow-hidden">
+                        <div class="bg-red-500 h-full rounded-full animate-pulse" style="width: 15%"></div>
+                    </div>
+                    <p class="text-xs mt-2 opacity-80">🔥 12 pessoas estão vendo essa página agora</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BENEFÍCIOS -->
+        <section class="max-w-3xl mx-auto px-4 mb-16">
+            <h3 class="section-heading text-center">Você vai aprender:</h3>
+            <div class="space-y-4">
+                <div class="benefit-item">
+                    <span class="material-symbols-rounded check-icon">check_circle</span>
+                    <p class="text-lg text-gray-800 font-medium">Como criar bolos que se destacam na vitrine</p>
+                </div>
+                <div class="benefit-item">
+                    <span class="material-symbols-rounded check-icon">check_circle</span>
+                    <p class="text-lg text-gray-800 font-medium">Como vender por preço alto sem medo</p>
+                </div>
+                <div class="benefit-item">
+                    <span class="material-symbols-rounded check-icon">check_circle</span>
+                    <p class="text-lg text-gray-800 font-medium">Como transformar ingredientes simples em produtos
+                        premium</p>
+                </div>
+                <div class="benefit-item">
+                    <span class="material-symbols-rounded check-icon">check_circle</span>
+                    <p class="text-lg text-gray-800 font-medium">Como atrair clientes mesmo sendo iniciante</p>
+                </div>
+                <div class="benefit-item">
+                    <span class="material-symbols-rounded check-icon">check_circle</span>
+                    <p class="text-lg text-gray-800 font-medium">Como aumentar seu lucro por bolo</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Intermediário -->
+        <section class="max-w-4xl mx-auto px-4 mb-16">
+            <div class="text-center">
+                <a href="#" class="link-grupo btn-cta text-lg sm:text-xl w-full sm:w-auto">
+                    <span>👉 Quero garantir minha vaga gratuita agora</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- QUEBRA DE OBJEÇÕES -->
+        <section
+            class="max-w-4xl mx-auto px-4 mb-16 bg-white p-6 sm:p-10 rounded-2xl shadow-sm border border-orange-100">
+            <h3 class="section-heading text-center mb-2">"Isso é mesmo pra mim?"</h3>
+            <p class="text-center text-lg mb-10 font-semibold text-gray-600">Provavelmente sim — veja por quê:</p>
+
+            <div class="space-y-6">
+                <div class="objection-box">
+                    <p class="font-bold mb-3 arrow-icon text-lg">
+                        <span class="material-symbols-rounded">help</span>
+                        "Eu não sei fazer bolo direito…"
+                    </p>
+                    <p class="text-gray-700 pl-8 border-l-2 border-gray-100 ml-2">Você vai aprender o passo a passo
+                        desde a massa até a finalização, mesmo começando do zero.</p>
+                </div>
+
+                <div class="objection-box">
+                    <p class="font-bold mb-3 arrow-icon text-lg">
+                        <span class="material-symbols-rounded">soup_kitchen</span>
+                        "Não tenho batedeira cara nem cozinha profissional…"
+                    </p>
+                    <p class="text-gray-700 pl-8 border-l-2 border-gray-100 ml-2">As receitas e técnicas foram criadas
+                        para funcionar com utensílios simples, de cozinha comum.</p>
+                </div>
+
+                <div class="objection-box">
+                    <p class="font-bold mb-3 arrow-icon text-lg">
+                        <span class="material-symbols-rounded">monetization_on</span>
+                        "Nunca vendi nada, tenho medo de não conseguir…"
+                    </p>
+                    <p class="text-gray-700 pl-8 border-l-2 border-gray-100 ml-2">Você vai aprender não só a fazer os
+                        bolos, mas como montar e apresentar de um jeito que as pessoas querem comprar.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PARA QUEM É -->
+        <section class="max-w-4xl mx-auto px-4 mb-16">
+            <div class="bg-green-50 rounded-2xl p-8 sm:p-12 border border-green-100">
+                <h3 class="section-heading text-center mb-8">Esse evento é para você que:</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm">
+                        <span class="material-symbols-rounded check-icon">check_circle</span>
+                        <p class="text-gray-800 font-medium">Quer ganhar dinheiro com confeitaria</p>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm">
+                        <span class="material-symbols-rounded check-icon">check_circle</span>
+                        <p class="text-gray-800 font-medium">Está cansada de vender barato</p>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm">
+                        <span class="material-symbols-rounded check-icon">check_circle</span>
+                        <p class="text-gray-800 font-medium">Quer aprender algo que realmente funciona</p>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm">
+                        <span class="material-symbols-rounded check-icon">check_circle</span>
+                        <p class="text-gray-800 font-medium">Quer começar certo, sem perder tempo</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- O QUE VOCÊ VAI APRENDER (Programa) -->
+        <section class="max-w-5xl mx-auto px-4 mb-16">
+            <h3 class="section-heading text-center mb-8">O que você vai aprender</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border-t-4 border-green-500">
+                    <h4 class="font-bold text-xl mb-3 flex items-center gap-2 text-green-700">
+                        <span class="material-symbols-rounded">calendar_today</span>Dia 1
+                    </h4>
+                    <p class="text-gray-600 leading-relaxed">Utensílios, massa de chocolate, creme de brigadeiro e
+                        mousse.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border-t-4 border-green-500">
+                    <h4 class="font-bold text-xl mb-3 flex items-center gap-2 text-green-700">
+                        <span class="material-symbols-rounded">calendar_today</span>Dia 2
+                    </h4>
+                    <p class="text-gray-600 leading-relaxed">Chocolate plástico, calda, montagem e pré-cobertura de
+                        ganache.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border-t-4 border-green-500">
+                    <h4 class="font-bold text-xl mb-3 flex items-center gap-2 text-green-700">
+                        <span class="material-symbols-rounded">calendar_today</span>Dia 3
+                    </h4>
+                    <p class="text-gray-600 leading-relaxed">Decoração, corte, embalagem, validade, congelamento e
+                        precificação.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIS PROVA SOCIAL -->
+        <section class="max-w-4xl mx-auto px-4 mb-16">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="testimonial-box m-0 flex flex-col justify-center">
+                    <p class="italic text-gray-700 text-lg leading-relaxed">
+                        <span class="text-4xl text-green-200 font-serif block mb-[-20px]">“</span>
+                        Aprendi em 3 dias o que não aprendi em anos tentando sozinha.
+                    </p>
+                </div>
+                <div class="testimonial-box m-0 flex flex-col justify-center">
+                    <p class="italic text-gray-700 text-lg leading-relaxed">
+                        <span class="text-4xl text-green-200 font-serif block mb-[-20px]">“</span>
+                        Depois dessas aulas meus bolos começaram a vender muito mais.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE A ÍSIS -->
+        <section class="max-w-4xl mx-auto px-4 mb-16">
+            <h3 class="section-heading text-center mb-8">Sobre a chef Ísis Alvarez</h3>
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg">
+                <div class="md:flex">
+                    <div class="md:w-1/2">
+                        <img src="./img/isis-logo.png" alt="Chef Ísis Alvarez"
+                            class="object-cover w-full h-full min-h-[300px]" />
+                    </div>
+                    <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                        <p class="text-gray-700 text-lg mb-4">
+                            <strong>Ísis Alvarez</strong> é confeiteira profissional, apaixonada por doces que encantam
+                            pela beleza
+                            e pelo sabor.
+                        </p>
+                        <p class="text-gray-600 text-base mb-4">
+                            Com anos de experiência no mercado, ela já ajudou centenas de alunas a transformar a
+                            confeitaria em uma fonte de renda e realização pessoal.
+                        </p>
+                        <p class="text-green-700 font-medium italic">
+                            O Evento gratuito Meu Bolo Na Vitrine é a oportunidade para você começar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="max-w-4xl mx-auto px-4 mb-10">
+            <div class="bg-white p-8 rounded-2xl shadow-xl text-center border border-gray-100">
+                <p
+                    class="text-2xl sm:text-3xl font-extrabold mb-6 urgency-text flex flex-col sm:flex-row items-center justify-center gap-2">
+                    <span class="material-symbols-rounded text-4xl">warning</span>
+                    As vagas estão quase no limite.
+                </p>
+                <a href="#" class="link-grupo btn-cta text-xl w-full sm:w-auto mb-6 transform hover:scale-105">
+                    <span>👉 Quero garantir minha vaga gratuita agora</span>
+                </a>
+                <p class="text-sm text-gray-500 bg-gray-50 inline-block px-4 py-2 rounded-full">
+                    ⚠️ Quem não estiver no grupo não receberá as aulas.
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="max-w-3xl mx-auto px-4 mb-16">
+            <h3 class="section-heading text-center mb-8">Perguntas frequentes</h3>
+            <div class="space-y-4">
+                <details class="bg-white p-5 rounded-xl shadow-sm cursor-pointer group">
+                    <summary class="font-bold text-lg flex items-center justify-between text-gray-800">
+                        Preciso de forno e equipamentos profissionais?
+                        <span
+                            class="material-symbols-rounded transform group-open:rotate-180 transition">expand_more</span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 leading-relaxed pl-2 border-l-2 border-green-500">Não. O curso é
+                        adaptado para os utensílios domésticos, que você já
+                        tem em casa.</p>
+                </details>
+                <details class="bg-white p-5 rounded-xl shadow-sm cursor-pointer group">
+                    <summary class="font-bold text-lg flex items-center justify-between text-gray-800">
+                        As aulas ficam gravadas?
+                        <span
+                            class="material-symbols-rounded transform group-open:rotate-180 transition">expand_more</span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 leading-relaxed pl-2 border-l-2 border-green-500">Sim! Elas ficam
+                        disponíveis nos dias úteis durante a semana do
+                        evento.</p>
+                </details>
+                <details class="bg-white p-5 rounded-xl shadow-sm cursor-pointer group">
+                    <summary class="font-bold text-lg flex items-center justify-between text-gray-800">
+                        Posso começar a vender logo após o evento?
+                        <span
+                            class="material-symbols-rounded transform group-open:rotate-180 transition">expand_more</span>
+                    </summary>
+                    <p class="text-gray-600 mt-3 leading-relaxed pl-2 border-l-2 border-green-500">Sim! Além de aprender
+                        a produção, você também terá acesso a técnicas
+                        de precificação para vendas.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="max-w-4xl mx-auto px-4 pb-12 text-sm text-gray-400">
+            <div class="border-t border-gray-200 pt-8">
+                <div class="text-justify leading-relaxed mb-6 opacity-70">
+                    Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do
+                    Facebook, a responsabilidade não é deles e sim do nosso site. Fazemos todos os esforços para
+                    indicar claramente e mostrar todas as provas do produto e usamos resultados reais. Nós não vendemos
+                    o seu e-mail ou qualquer informação para terceiros. Jamais fazemos nenhum tipo de spam. Se você
+                    tiver alguma dúvida, sinta-se à vontade para usar o link de contato e falar conosco em horário
+                    comercial.
+                </div>
+                <div class="text-center font-semibold text-gray-500">
+                    © 2025 Renda Doce. Todos os direitos reservados.
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Script de Vagas Restantes -->
+    <script>
+        // Função para gerenciar vagas restantes com localStorage
+        function gerenciarVagas() {
+            const STORAGE_KEY = 'rendaDoceVagas';
+            // Se não tiver salvo, começa com um número entre 15 e 25
+            let vagas = localStorage.getItem(STORAGE_KEY);
+
+            if (!vagas) {
+                vagas = Math.floor(Math.random() * 10) + 15; // 15 a 24
+                localStorage.setItem(STORAGE_KEY, vagas);
+            } else {
+                vagas = parseInt(vagas);
+            }
+
+            const elementoVagas = document.getElementById('vagas-restantes');
+
+            // Atualiza visual
+            function atualizarDisplay() {
+                elementoVagas.innerText = vagas;
+                // Animação suave
+                elementoVagas.style.transition = "transform 0.2s";
+                elementoVagas.style.transform = "scale(1.2)";
+                setTimeout(() => elementoVagas.style.transform = "scale(1)", 200);
+            }
+
+            atualizarDisplay();
+
+            // Decrementa as vagas aleatoriamente para simular inscrições reais
+            // Nunca deixa chegar a zero (mínimo de 3 vagas)
+            function decrementar() {
+                if (vagas > 3) {
+                    // Chance de 40% de diminuir a cada intervalo
+                    if (Math.random() > 0.6) {
+                        vagas--;
+                        localStorage.setItem(STORAGE_KEY, vagas);
+                        atualizarDisplay();
+                    }
+                }
+
+                // Define o próximo intervalo aleatório (entre 4 e 10 segundos)
+                const proximoIntervalo = Math.floor(Math.random() * 6000) + 4000;
+                setTimeout(decrementar, proximoIntervalo);
+            }
+
+            // Inicia o ciclo
+            setTimeout(decrementar, 3000);
+        }
+
+        gerenciarVagas();
+    </script>
+
+    <script src="./js/grupo-whatsapp.js"></script>
+</body>
+
+</html>
